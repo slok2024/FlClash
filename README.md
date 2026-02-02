@@ -1,127 +1,44 @@
-<div>
+flclash for core
 
-[**简体中文**](README_zh_CN.md)
+官方内核使用go1.24.0进行的编译，根据官方源码使用go1.25.6进行重新编译，并同时编译v1到v4多个版本，同时使用upx进行压缩以减少体积。
 
-</div>
+大家可以根据自己电脑处理器选择对应的内核到软件安装目录进行替换即可，可以发挥最大性能。
 
-## FlClash
 
-[![Downloads](https://img.shields.io/github/downloads/chen08209/FlClash/total?style=flat-square&logo=github)](https://github.com/chen08209/FlClash/releases/)[![Last Version](https://img.shields.io/github/release/chen08209/FlClash/all.svg?style=flat-square)](https://github.com/chen08209/FlClash/releases/)[![License](https://img.shields.io/github/license/chen08209/FlClash?style=flat-square)](LICENSE)
+处理器支持情况详细划分
 
-[![Channel](https://img.shields.io/badge/Telegram-Channel-blue?style=flat-square&logo=telegram)](https://t.me/FlClash)
 
-A multi-platform proxy client based on ClashMeta, simple and easy to use, open-source and ad-free.
+GOAMD64=v1 　(基础版)
 
-on Desktop:
-<p style="text-align: center;">
-    <img alt="desktop" src="snapshots/desktop.gif">
-</p>
+支持： 只要是 64 位 CPU 就能跑。
 
-on Mobile:
-<p style="text-align: center;">
-    <img alt="mobile" src="snapshots/mobile.gif">
-</p>
+代表： 甚至包括老旧的奔腾、赛扬 64 位处理器。
 
-## Features
 
-✈️ Multi-platform: Android, Windows, macOS and Linux
 
-💻 Adaptive multiple screen sizes, Multiple color themes available
+GOAMD64=v2 　(平衡版)
 
-💡 Based on Material You Design, [Surfboard](https://github.com/getsurfboard/surfboard)-like UI
+Intel: Core i7/i5/i3 (Nehalem 及以后)，即一代酷睿之后的所有产品。
 
-☁️ Supports data sync via WebDAV
+AMD: Opteron, Phenom II, FX 系列 (Bulldozer架构)。
 
-✨ Support subscription link, Dark mode
 
-## Use
+GOAMD64=v3　 (性能版)
 
-### Linux
+Intel: 第 4 代 Haswell (如 i7-4770) 及以后的所有酷睿处理器。
 
-⚠️ Make sure to install the following dependencies before using them
+AMD: Ryzen (所有系列)，以及 Excavator 架构及以后的 APU。
 
-   ```bash
-    sudo apt-get install libayatana-appindicator3-dev
-    sudo apt-get install libkeybinder-3.0-dev
-   ```
+优势： 增加了 AVX2，这对于处理 Clash 内部的加解密数据流和哈希表匹配有显著加速作用。
 
-### Android
 
-Support the following actions
 
-   ```bash
-    com.follow.clash.action.START
-    
-    com.follow.clash.action.STOP
-    
-    com.follow.clash.action.CHANGE
-   ```
+GOAMD64=v4　 (极限版)
 
-## Download
+Intel: 第 11 代以后（部分型号禁用了 AVX-512）、至强 (Skylake-SP 及以后)。
 
-<a href="https://chen08209.github.io/FlClash-fdroid-repo/repo?fingerprint=789D6D32668712EF7672F9E58DEEB15FBD6DCEEC5AE7A4371EA72F2AAE8A12FD"><img alt="Get it on F-Droid" src="snapshots/get-it-on-fdroid.svg" width="200px"/></a> <a href="https://github.com/chen08209/FlClash/releases"><img alt="Get it on GitHub" src="snapshots/get-it-on-github.svg" width="200px"/></a>
+AMD: Ryzen 7000 系列 (Zen 4) 及以后。
 
-## Build
+注意： 如果 CPU 不支持 AVX-512，运行 v4 编译的程序会直接报 Illegal Instruction 错误导致崩溃。
 
-1. Update submodules
-   ```bash
-   git submodule update --init --recursive
-   ```
 
-2. Install `Flutter` and `Golang` environment
-
-3. Build Application
-
-    - android
-
-        1. Install  `Android SDK` ,  `Android NDK`
-
-        2. Set `ANDROID_NDK` environment variables
-
-        3. Run Build script
-
-           ```bash
-           dart .\setup.dart android
-           ```
-
-    - windows
-
-        1. You need a windows client
-
-        2. Install  `Gcc`，`Inno Setup`
-
-        3. Run build script
-
-           ```bash
-           dart .\setup.dart windows --arch <arm64 | amd64>
-           ```
-
-    - linux
-
-        1. You need a linux client
-
-        2. Run build script
-
-           ```bash
-           dart .\setup.dart linux --arch <arm64 | amd64>
-           ```
-
-    - macOS
-
-        1. You need a macOS client
-
-        2. Run build script
-
-           ```bash
-           dart .\setup.dart macos --arch <arm64 | amd64>
-           ```
-
-## Star
-
-The easiest way to support developers is to click on the star (⭐) at the top of the page.
-
-<p style="text-align: center;">
-    <a href="https://api.star-history.com/svg?repos=chen08209/FlClash&Date">
-        <img alt="start" width=50% src="https://api.star-history.com/svg?repos=chen08209/FlClash&Date"/>
-    </a>
-</p>
