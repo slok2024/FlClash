@@ -1,4 +1,4 @@
-flclash for core
+# flclash for core
 
 官方内核使用go1.24.0进行的编译，根据官方源码使用go1.25.6进行重新编译，并同时编译v1到v4多个版本，同时使用upx进行压缩以减少体积。
 
