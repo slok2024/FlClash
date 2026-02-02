@@ -4,6 +4,8 @@
 
 大家可以根据自己电脑处理器选择对应的内核到软件安装目录进行替换即可，可以发挥最大性能。
 
+<img width="759" height="317" alt="image" src="https://github.com/user-attachments/assets/a2ff129c-88b8-4260-8101-ee2305c3ee50" />
+
 
 处理器支持情况详细划分
 
